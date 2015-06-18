@@ -1,28 +1,23 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Web.Mvc;
 using Contrib.Cache.Memcached.Models;
 using Contrib.Cache.Memcached.ViewModels;
 using Orchard;
 using Orchard.Caching;
 using Orchard.ContentManagement;
-using Orchard.Core.Contents.Controllers;
-using Orchard.Data;
 using Orchard.Localization;
+using Orchard.Mvc;
 using Orchard.Security;
 
 namespace Contrib.Cache.Memcached.Controllers {
     [ValidateInput(false)]
     public  class AdminController : Controller, IUpdateModel {
-        private readonly IRepository<MemcachedSettingsPartRecord> _repository;
         private readonly ISignals _signals;
 
         public AdminController(
-            IOrchardServices services, 
-            IRepository<MemcachedSettingsPartRecord> repository,
+            IOrchardServices services,
             ISignals signals) {
-            _repository = repository;
             _signals = signals;
             Services = services;
 
