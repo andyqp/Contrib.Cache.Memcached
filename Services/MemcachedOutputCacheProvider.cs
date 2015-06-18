@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
-using Contrib.Cache.Services;
-using CacheItem = Contrib.Cache.Models.CacheItem;
+using Orchard.Environment.Extensions;
+using Orchard.OutputCache.Services;
+using CacheItem = Orchard.OutputCache.Models.CacheItem;
 
 namespace Contrib.Cache.Memcached.Services {
+    [OrchardSuppressDependency("Orchard.OutputCache.Services.DefaultCacheStorageProvider")]
     public class MemcachedOutputCacheStorageProvider : IOutputCacheStorageProvider {
         private readonly IMemcachedClientHolder _clientHolder;
 

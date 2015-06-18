@@ -12,7 +12,7 @@ using Orchard.Caching;
 using Orchard.ContentManagement;
 using Orchard.Environment;
 using Orchard.Settings;
-using CacheItem = Contrib.Cache.Models.CacheItem;
+using CacheItem = Orchard.OutputCache.Models.CacheItem;
 
 namespace Contrib.Cache.Memcached.Services {
     /// <summary>
